@@ -7,7 +7,10 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ErrorCode {
 
-    SUCCESS(""), INVALID_PARAM("Invalid Parameter"), NOT_FOUND("Not Found Data"), unknown("unkwon");
+    SUCCESS(""),
+    INVALID_PARAM("Invalid Parameter"),
+    NOT_FOUND("Not Found Data"),
+    UNKNOWN("Unknown");
 
     private final String errorMessage;
 }
