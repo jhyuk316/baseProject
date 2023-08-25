@@ -15,4 +15,9 @@ public class MemberService {
         Member entity = addMemberRequest.toEntity();
         return memberRepository.save(entity);
     }
+
+    public Member getMember(long memberId) {
+
+        return memberRepository.findById(memberId).orElseThrow();
+    }
 }
