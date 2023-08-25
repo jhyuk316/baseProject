@@ -2,15 +2,17 @@ package com.jhyuk.baseproject.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.springframework.http.HttpStatus;
 
 @Getter
 @AllArgsConstructor
 public enum ErrorCode {
 
-    SUCCESS(""),
-    INVALID_PARAM("Invalid Parameter"),
-    NOT_FOUND("Not Found Data"),
-    UNKNOWN("Unknown");
+    SUCCESS(HttpStatus.OK, "OK"),
+    INVALID_PARAM(HttpStatus.BAD_REQUEST, "Invalid Parameter"),
+    NOT_FOUND(HttpStatus.BAD_REQUEST, "Not Found Data"),
+    UNKNOWN(HttpStatus.BAD_REQUEST, "Unknown");
 
-    private final String errorMessage;
+    private final HttpStatus httpStatus;
+    private final String message;
 }
